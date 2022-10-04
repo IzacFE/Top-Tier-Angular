@@ -1,0 +1,85 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h3 class="text-danger fw-bold">
+        Izac Passangers
+        <a routerLink="/passanger/add" class="btn btn-danger btn-sm">
+          <i class="fa fa-plus-circle"></i> New
+        </a>
+      </h3>
+      <p>You can add new passanger, or edits and deletes the passangers</p>
+      <form>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search Passanger"
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="submit"
+                  class="btn btn-outline-dark"
+                  value="Search"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<pre>{{ passangers | json }}</pre>
+
+<!-- Passanger Cards -->
+<div class="container mt-3" *ngIf="!loading && passangers.length > 0">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let passanger of passangers">
+      <div class="card list-group-item-primary shadow-lg">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-sm-4">
+              <img src="{{ passanger.photo }}" alt="" class="passangerImg" />
+            </div>
+            <div class="col-sm-7">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  Id : <span class="fw-bold">{{ passanger.id }}</span>
+                </li>
+                <li class="list-group-item">
+                  Name : <span class="fw-bold">{{ passanger.name }}</span>
+                </li>
+                <li class="list-group-item">
+                  City : <span class="fw-bold">{{ passanger.city }}</span>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="col-sm-1 d-flex flex-column justify-content-center align-items-center"
+            >
+              <a
+                routerLink="/passanger/view/:passangerId"
+                class="btn btn-warning my-1"
+              >
+                <i class="fa fa-exclamation-circle"></i>
+              </a>
+              <a
+                routerLink="/passanger/edit/:passangerId"
+                class="btn btn-primary my-1"
+              >
+                <i class="fa-regular fa-pen-to-square"></i>
+              </a>
+              <button class="btn btn-danger my-1">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

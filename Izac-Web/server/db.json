@@ -1,0 +1,39 @@
+{
+  "passangers": [
+    {
+      "id": "ASDdwqehTY",
+      "name": "Izac",
+      "photo": "https://placeimg.com/640/640/animals",
+      "city": "Puwokerto",
+      "groupId": "1"
+    },
+    {
+      "id": "DSAdwqehTY",
+      "name": "Aqsha",
+      "photo": "https://placeimg.com/640/640/animals",
+      "city": "Puwokerto",
+      "groupId": "2"
+    },
+    {
+      "id": "TCFdwqehTY",
+      "name": "Ghifari",
+      "photo": "https://placeimg.com/640/640/animals",
+      "city": "Puwokerto",
+      "groupId": "3"
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "name": "Bus"
+    },
+    {
+      "id": 2,
+      "name": "Taxi"
+    },
+    {
+      "id": 3,
+      "name": "Plane"
+    }
+  ]
+}
