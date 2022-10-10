@@ -7,27 +7,39 @@
   </div>
 </div>
 
+<div *ngIf="loading">
+  <app-spinner></app-spinner>
+</div>
+
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p>{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Passanger Details -->
-<div class="container mt-5">
+<div class="container mt-5" *ngIf="!loading && isNotEmpty()">
   <div class="row align-items-center">
     <div class="col-sm-4">
-      <img
-        src="https://placeimg.com/640/640/animals"
-        alt=""
-        class="detailImg"
-      />
+      <img src="{{ passanger.photo }}" alt="" class="detailImg" />
     </div>
     <div class="col-sm-6">
       <ul class="list-group">
-        <li class="list-group-item">Id : <span class="fw-bold">Id</span></li>
         <li class="list-group-item">
-          Name : <span class="fw-bold">Name</span>
+          Id : <span class="fw-bold">{{ passanger.id }}</span>
         </li>
         <li class="list-group-item">
-          City : <span class="fw-bold">City</span>
+          Name : <span class="fw-bold">{{ passanger.name }}</span>
         </li>
         <li class="list-group-item">
-          Group : <span class="fw-bold">Group</span>
+          City : <span class="fw-bold">{{ passanger.city }}</span>
+        </li>
+        <li class="list-group-item">
+          Group : <span class="fw-bold">{{ group.name }}</span>
         </li>
       </ul>
     </div>

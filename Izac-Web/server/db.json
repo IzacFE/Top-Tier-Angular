@@ -5,34 +5,45 @@
       "name": "Izac",
       "photo": "https://placeimg.com/640/640/animals",
       "city": "Puwokerto",
-      "groupId": "1"
+      "groupId": 1
     },
     {
       "id": "DSAdwqehTY",
       "name": "Aqsha",
       "photo": "https://placeimg.com/640/640/animals",
       "city": "Puwokerto",
-      "groupId": "2"
+      "groupId": 2
     },
     {
       "id": "TCFdwqehTY",
       "name": "Ghifari",
       "photo": "https://placeimg.com/640/640/animals",
       "city": "Puwokerto",
-      "groupId": "3"
+      "groupId": 3
+    },
+    {
+      "name": "yuhuu",
+      "photo": "https://i1.sndcdn.com/avatars-ylM4tanwBXJZhjWb-X76mWw-t500x500.jpg",
+      "city": "Jakarta Keras",
+      "groupId": "1",
+      "id": "vTd4nAH"
     }
   ],
   "groups": [
     {
       "id": 1,
-      "name": "Bus"
-    },
-    {
-      "id": 2,
       "name": "Taxi"
     },
     {
+      "id": 2,
+      "name": "Bus"
+    },
+    {
       "id": 3,
+      "name": "Train"
+    },
+    {
+      "id": 4,
       "name": "Plane"
     }
   ]

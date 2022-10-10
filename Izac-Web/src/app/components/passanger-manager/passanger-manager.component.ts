@@ -10,7 +10,7 @@ import { PassangerService } from 'src/app/services/passanger.service';
 export class PassangerManagerComponent implements OnInit {
   public loading: boolean = false;
   public passangers: IPassanger[] = [];
-  public errorMassage: string | null = null;
+  public errorMessage: string | null = null;
 
   constructor(private passangerService: PassangerService) {}
 
@@ -22,7 +22,7 @@ export class PassangerManagerComponent implements OnInit {
         this.loading = false;
       },
       (error) => {
-        this.errorMassage = error;
+        this.errorMessage = error;
         this.loading = false;
       }
     );
