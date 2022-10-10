@@ -1,20 +1,6 @@
 {
   "passangers": [
     {
-      "id": "ASDdwqehTY",
-      "name": "Izac",
-      "photo": "https://placeimg.com/640/640/animals",
-      "city": "Puwokerto",
-      "groupId": 1
-    },
-    {
-      "id": "DSAdwqehTY",
-      "name": "Aqsha",
-      "photo": "https://placeimg.com/640/640/animals",
-      "city": "Puwokerto",
-      "groupId": 2
-    },
-    {
       "id": "TCFdwqehTY",
       "name": "Ghifari",
       "photo": "https://placeimg.com/640/640/animals",
@@ -27,6 +13,13 @@
       "city": "Jakarta Keras",
       "groupId": "1",
       "id": "vTd4nAH"
+    },
+    {
+      "name": "sadewq",
+      "photo": "https://i1.sndcdn.com/artworks-qiHl3tOTNMfbb4ph-t1YcoQ-t500x500.jpg",
+      "city": "PBG",
+      "groupId": "3",
+      "id": "CmQZitK"
     }
   ],
   "groups": [

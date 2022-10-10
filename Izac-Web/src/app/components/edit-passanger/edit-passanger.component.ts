@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IGroup } from 'src/app/models/IGroup';
 import { IPassanger } from 'src/app/models/IPassanger';
 import { PassangerService } from 'src/app/services/passanger.service';
@@ -18,7 +18,8 @@ export class EditPassangerComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private passangerService: PassangerService
+    private passangerService: PassangerService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +41,24 @@ export class EditPassangerComponent implements OnInit {
           this.loading = false;
         }
       );
+    }
+  }
+
+  public submitUpdate() {
+    if (this.passangerId) {
+      this.passangerService
+        .updatePassanger(this.passanger, this.passangerId)
+        .subscribe(
+          (data) => {
+            this.router.navigate(['/']).then();
+          },
+          (error) => {
+            this.errorMessage = error;
+            this.router
+              .navigate([`/passanger/edit/${this.passangerId}`])
+              .then();
+          }
+        );
     }
   }
 }

@@ -6,15 +6,15 @@
     </div>
   </div>
 </div>
-<pre>{{ passanger | json }}</pre>
 <!-- Edit passanger form -->
 <div class="container mt-3">
   <div class="row">
     <div class="col-sm-4">
-      <form>
+      <form (submit)="submitUpdate()">
         <div class="mb-2">
           <input
             [(ngModel)]="passanger.name"
+            [value]="passanger.name"
             name="name"
             required="true"
             type="text"
@@ -24,6 +24,9 @@
         </div>
         <div class="mb-2">
           <input
+            [(ngModel)]="passanger.photo"
+            [value]="passanger.photo"
+            name="photo"
             required="true"
             type="text"
             class="form-control"
@@ -32,6 +35,9 @@
         </div>
         <div class="mb-2">
           <input
+            [(ngModel)]="passanger.city"
+            [value]="passanger.city"
+            name="city"
             required="true"
             type="text"
             class="form-control"
@@ -39,8 +45,16 @@
           />
         </div>
         <div class="mb-2">
-          <select name="" id="" class="form-control">
-            <option value="">Group</option>
+          <select
+            [(ngModel)]="passanger.groupId"
+            [value]="passanger.groupId"
+            name="groupId"
+            id=""
+            class="form-control"
+          >
+            <option [value]="item.id" *ngFor="let item of groups">
+              {{ item.name }}
+            </option>
           </select>
         </div>
         <div class="mb-2">
@@ -50,7 +64,7 @@
       </form>
     </div>
     <div class="col-sm-4">
-      <img src="{{ passanger.photo }}" alt="" class="addImg" />
+      <img [src]="passanger.photo" alt="" class="addImg" />
     </div>
   </div>
 </div>

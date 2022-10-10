@@ -15,6 +15,10 @@ export class PassangerManagerComponent implements OnInit {
   constructor(private passangerService: PassangerService) {}
 
   ngOnInit(): void {
+    this.getAllPassangersFromServer();
+  }
+
+  public getAllPassangersFromServer() {
     this.loading = true;
     this.passangerService.getAllPassangers().subscribe(
       (data) => {
@@ -26,5 +30,13 @@ export class PassangerManagerComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+
+  clickDeletePassanger(id: any) {
+    if (id) {
+      this.passangerService.deletePassanger(id).subscribe(() => {
+        this.getAllPassangersFromServer();
+      });
+    }
   }
 }
